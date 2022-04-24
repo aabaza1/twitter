@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "../Styles/Tweet.css"
 
 
@@ -8,6 +8,14 @@ import "../Styles/Tweet.css"
 const Tweet = props => {
     const [likes,setLikes] = useState(0);
     const [isLiked,setIsLiked] = useState(false);
+
+
+    useEffect(()=>{
+        let x = Math.random()
+        if(x>0.5){
+        setTimeout(()=> setLikes(likes+1),5000);
+        }
+      },[])
 
     return(
 
